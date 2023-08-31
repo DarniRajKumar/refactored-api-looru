@@ -1,0 +1,21 @@
+{
+    "post_http_code":201,
+    "post_method":"POST",
+    "workflow_state":"ACTIVE",
+    "put_http_code":202,
+    "put_method":"PUT",
+    "success_http_code":200,
+    "data_evaluation_type":"SCHEDULE",
+    "data_actions_type":"slack-message",
+    "get_method":"GET",
+    "delete_method":"DELETE",
+    "owner_id": "8de5a504-b5f7-407f-a5ee-aa4870a1c640",
+    "sor_id": null,
+    "owner_email": "rajkumardarni@b2btesters.com",
+    "owner_name": "Rajkumar Darni",
+    "error_data": null,
+    "connections": [],
+    "template_id": null,
+    "sync_state": "private"      
+
+}

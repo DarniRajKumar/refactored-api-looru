@@ -1,0 +1,65 @@
+{
+    "name": "API_AUTO_ngax",
+    "description": "",
+    "sor": "HUBSPOT",
+    "sor_object_name": "deals",
+    "actions": [
+        {
+            "type": "slack-message",
+            "data": {
+                "version": "v1",
+                "type": "conversation",
+                "msg_template": " hello",
+                "msg_type": "RECORD",
+                "report_desc": "",
+                "conversations": [
+                    "C05L4TVPFRD"
+                ],
+                "fields": [
+                    "dealname",
+                    "luru_deal_status",
+                    "amount"
+                ],
+                "media_category": "reminder",
+                "action_buttons": [
+                    {
+                        "type": "update-record",
+                        "fields": [
+                            "dealname",
+                            "amount",
+                            "dealstage"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "evaluation": {
+        "type": "SCHEDULE",
+        "data": {
+            "cron_expression": "0 12 * * 1",
+            "tz": "Asia/Calcutta"
+        }
+    },
+    "filter": {
+        "version": "v1",
+        "data": {
+            "and": [
+                {
+                    "and": [
+                        {
+                            "object_name": "deals",
+                            "field": "amount",
+                            "op": "=",
+                            "value": 25000,
+                            "originalOp": "equals"
+                        }
+                    ]
+                },
+                {
+                    "or": []
+                }
+            ]
+        }
+    }
+}

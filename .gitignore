@@ -1,0 +1,7 @@
+# Ignore cache files
+__pycache__/
+*.pyc
+__pycache__
+
+# Ignore virtual environment directories
+venv/
