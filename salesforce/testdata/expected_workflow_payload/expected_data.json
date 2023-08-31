@@ -1,0 +1,12 @@
+{
+     "post_http_code":201,
+     "post_method":"POST",
+     "workflow_state":"ACTIVE",
+     "put_http_code":202,
+     "put_method":"PUT",
+     "success_http_code":200,
+     "data_evaluation_type":"SCHEDULE",
+     "data_actions_type":"slack-message",
+     "get_method":"GET",
+     "delete_method":"DELETE"
+}

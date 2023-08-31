@@ -1,0 +1,83 @@
+{
+    "name": "API_AUTO_pzlj",
+    "sor": "SFDC",
+    "sor_object_name": "rajkumar",
+    "filter": {
+        "version": "v1",
+        "data": {
+            "and": [
+                {
+                    "and": [
+                        {
+                            "object_name": "Opportunity",
+                            "field": "StageName",
+                            "op": "=",
+                            "value": "Needs Analysis"
+                        },
+                        {
+                            "object_name": "Opportunity",
+                            "field": "Name",
+                            "op": "~",
+                            "value": "Coke"
+                        }
+                    ]
+                },
+                {
+                    "or": []
+                }
+            ]
+        }
+    },
+    "evaluation": {
+        "type": "SCHEDULE",
+        "data": {
+            "cron_expression": "*/10 * * * *",
+            "tz": "Asia/Kolkata"
+        }
+    },
+    "actions": [
+        {
+            "type": "slack-message",
+            "data": {
+                "version": "v1",
+                "type": "conversation",
+                "conversations": [
+                    "D04EMRZNB8A"
+                ],
+                "msg_template": "Yo! Opportunity *%%record.Name%%* is still in Needs Analysis stage; Do something!",
+                "fields": [
+                    "Name",
+                    "Amount",
+                    "NextStep",
+                    "OwnerId",
+                    "AccountId",
+                    "AccountId.OwnerId",
+                    "AccountId.OwnerId.Phone",
+                    "AccountId.Phone"
+                ],
+                "action_buttons": [
+                    {
+                        "type": "update-record",
+                        "fields": [
+                            "Name",
+                            "Amount",
+                            "NextStep"
+                        ]
+                    },
+                    {
+                        "type": "display-record",
+                        "fields": [
+                            "Name",
+                            "Amount",
+                            "NextStep",
+                            "OwnerId",
+                            "AccountId.OwnerId",
+                            "AccountId.OwnerId.Phone",
+                            "AccountId.Phone"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

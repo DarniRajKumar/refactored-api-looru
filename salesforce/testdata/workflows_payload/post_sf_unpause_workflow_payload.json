@@ -1,0 +1,40 @@
+{
+    "doPause": true,
+       "body": {
+           "sor": "SFDC",
+           "sor_object_name": "deals",
+             "actions": [
+               {
+                   "type": "slack-message",
+                   "data": {
+                       "version": "v1",
+                       "type": "conversation",
+                       "msg_template": " hello",
+                       "msg_type": "RECORD",
+                       "report_desc": "",
+   
+                       "conversations": [
+                           "C05L4TVPFRD"
+                       ],
+   
+                       "fields": [
+                           "dealname",
+                           "luru_deal_status",
+                           "amount"
+                       ],
+                       "media_category": "reminder",
+                       "action_buttons": [
+                           {
+                               "type": "update-record",
+                               "fields": [
+                                   "dealname",
+                                   "amount",
+                                   "dealstage"
+                               ]
+                           }
+                       ]
+                   }
+               }
+           ]
+       }
+   }
